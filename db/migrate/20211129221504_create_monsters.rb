@@ -4,7 +4,7 @@ class CreateMonsters < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :life
       t.float :cr
-      t.string :type
+      t.string :mon_type
 
       t.timestamps
     end
