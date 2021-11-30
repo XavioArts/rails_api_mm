@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Monster from "./Monster";
 import MonForm from "./MonForm";
+import { Link } from "react-router-dom";
 
 const Monsters = (props) => {
 
@@ -53,6 +54,7 @@ const Monsters = (props) => {
 
     return (
         <div>
+            {/* <Link to="/about">Go to about</Link> */}
             <button onClick={toggleForm}>
                 {toggle ? "Cancel" : "Make a new Monster"}
             </button>
