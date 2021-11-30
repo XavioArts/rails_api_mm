@@ -6,19 +6,19 @@ import MonForm from './components/MonForm';
 
 function App() {
 
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
 
-  const toggleForm = () => {
-    setToggle(!toggle);
-  };
+  // const toggleForm = () => {
+  //   setToggle(!toggle);
+  // };
 
   return (
     <div className="App">
        <h1>Monster Manual</h1>
-       <button onClick={toggleForm}>
+       {/* <button onClick={toggleForm}>
          {toggle ? "Cancel" : "Make a new Monster"}
        </button>
-       {toggle && <MonForm />}
+       {toggle && <MonForm />} */}
        <Monsters />
     </div>
   );
