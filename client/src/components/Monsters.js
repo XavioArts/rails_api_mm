@@ -25,6 +25,10 @@ const Monsters = (props) => {
     // will need the addMon, updateMon, and deleteMon functions here 
     // since the list of mons is in this component
 
+    const addMon = (monster) => {
+        setMons([...mons, monster]);
+    };
+
     const renderMons = () => {
         if (mons.length === 0) {
             return (
@@ -41,7 +45,7 @@ const Monsters = (props) => {
             <button onClick={toggleForm}>
                 {toggle ? "Cancel" : "Make a new Monster"}
             </button>
-            {toggle && <MonForm />}
+            {toggle && <MonForm addMon={addMon} toggleForm={toggleForm}/>}
             <div>
                 <h2>All monsters:</h2>
                 {renderMons()}
