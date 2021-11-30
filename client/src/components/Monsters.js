@@ -29,6 +29,17 @@ const Monsters = (props) => {
         setMons([...mons, monster]);
     };
 
+    const updateMon = (monster) => {
+        let edit = mons.map((mon) => (mon.id === monster.id ? monster : mon));
+        setMons(edit);
+    };
+
+    const deleteMon = async (id) => {
+        let result = await axios.delete(`/api/monsters/${id}`);
+        let newMons = mons.filter((mon) => mon.id !== id);
+        setMons(newMons);
+    }
+
     const renderMons = () => {
         if (mons.length === 0) {
             return (
@@ -36,7 +47,7 @@ const Monsters = (props) => {
             );
         } else
         return mons.map((mon) => {
-            return <Monster {...mon} key={mon.id} />;
+            return <Monster {...mon} key={mon.id} updateMon={updateMon} deleteMon={deleteMon} />;
         });
     };
 
